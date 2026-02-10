@@ -182,18 +182,21 @@
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
     <div class="periodical">
       {{ periodical | strip }}
+      {% if entry.award %}
+        &nbsp;<span class="badge badge-primary badge-pill" style="white-space: nowrap;">
+          {{ entry.award_name | default: "Highlight" }}
+        </span>
+      {% endif %}
     </div>
+
+
+
     <div class="periodical">
       {{ entry.note | strip }}
     </div>
 
     <!-- Links/Buttons -->
     <div class="links">
-      {% if entry.award %}
-        <a class="award btn btn-sm z-depth-0" role="button">
-          {%- if entry.award_name %}{{ entry.award_name }}{% else %}Awarded{% endif -%}
-        </a>
-      {% endif %}
       {% if entry.abstract %}
         <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
       {% endif %}
@@ -362,12 +365,6 @@
       {% endif %}
     {% endif %}
 
-    {% if entry.award %}
-      <!-- Hidden Award block -->
-      <div class="award hidden d-print-inline">
-        <p>{{ entry.award | markdownify }}</p>
-      </div>
-    {% endif %}
 
     {% if entry.abstract %}
       <!-- Hidden abstract block -->
