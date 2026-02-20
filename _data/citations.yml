@@ -1,11 +1,11 @@
 metadata:
-  last_updated: '2026-02-16'
+  last_updated: '2026-02-20'
 papers:
   Ec6xztMAAAAJ:d1gkVwhDpl0C:
-    citations: 2
+    citations: 3
     title: 'Chartcap: Mitigating hallucination of dense chart captioning'
     year: '2025'
   Ec6xztMAAAAJ:u-x6o8ySG0sC:
-    citations: 44
+    citations: 45
     title: 'Timechara: Evaluating point-in-time character hallucination of role-playing large language models'
     year: '2024'
